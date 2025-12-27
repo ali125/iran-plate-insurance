@@ -6,6 +6,7 @@ import { fetchVehicleByPlate } from "./api/mockApi";
 import { calculateInsurancePrice } from "./utils/insurance";
 import VehicleDetailCard from "./components/VehicleDetailCard";
 import historyStorage from "./utils/history";
+import ToggleMode from "./components/ToggleMode";
 
 export default function App() {
   const [plate, setPlate] = useState("");
@@ -68,7 +69,9 @@ export default function App() {
   }, []);
 
   return (
-    <div>
+    <div className="container">
+      <ToggleMode />
+
       <h2>استعلام خودرو و بیمه سالانه</h2>
 
       <form onSubmit={handleSubmit}>
